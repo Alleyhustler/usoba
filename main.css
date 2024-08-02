@@ -1,0 +1,71 @@
+/* Fullscreen background */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: url('images/field.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif; /* Fallback font */
+}
+
+/* Main content */
+.main-content {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure content is above floating images */
+}
+
+.title {
+    font-family: 'Creepster', cursive; /* Apply the spooky font */
+    font-size: 8em; /* Adjust size as needed */
+    color: #fff; /* Adjust color for better visibility */
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 500px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: add shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.main-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icon img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Floating images */
+.floating-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure floating images don't interfere with interactions */
+}
+
+.floating-images img {
+    position: absolute;
+    width: 80px; /* Adjust size of floating images */
+    height: 80px; /* Adjust size of floating images */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+}
