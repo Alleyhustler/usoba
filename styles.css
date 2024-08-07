@@ -1,0 +1,78 @@
+/* Apply a full-screen background GIF */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('cannon.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Container to center the content */
+.container {
+    position: relative;
+    height: 100%;
+}
+
+/* Center image styling */
+.center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 20%;
+    height: auto;
+    animation: shake 0.5s infinite; /* Apply the shaking animation */
+}
+
+
+/* Keyframe animation for shaking effect */
+@keyframes shake {
+    0% { transform: translate(-50%, -50%) translateX(0); }
+    25% { transform: translate(-50%, -50%) translateX(-5px); }
+    50% { transform: translate(-50%, -50%) translateX(5px); }
+    75% { transform: translate(-50%, -50%) translateX(-5px); }
+    100% { transform: translate(-50%, -50%) translateX(0); }
+}
+
+/* Social icon styling */
+.social-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.telegram-icon {
+    top: 10px;
+    left: 10px;
+    background-image: url('telegram.png');
+}
+
+.twitter-icon {
+    top: 10px;
+    right: 10px;
+    background-image: url('twitter.png');
+}
+
+/* Vignette popup styling */
+.vignette-popup {
+    position: absolute;
+    left: -850px; /* Adjust as needed based on your design */
+    top: 50%;
+    transform: translateY(-80%);
+    width: 200px; /* Adjust width as needed */
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, left 0.3s ease;
+}
+
+.container:hover .vignette-popup {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
