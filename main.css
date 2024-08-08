@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/waterfall-icegif-6.gif'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    position: relative; /* Ensure body is the reference for absolute positioning */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #ffeb3b;
+    color: #000;
+    border-radius: 5px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-top: 80px; /* Space for the fixed navbar */
+    animation: fadeIn 2s;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.image-container {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ffffff00;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s;
+}
+
+.caption {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.highlight {
+    font-weight: 700;
+    color: #ffeb3b; /* Highlight color */
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffeb3b;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #ffc107;
+}
+/* Glowing effect for the text in the combined section */
+#about-gallery-contact h2 {
+    font-size: 2em;
+    color: #000000;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), /* Soft white glow */
+                 0 0 10px rgba(255, 255, 255, 0.7), /* Medium white glow */
+                 0 0 20px rgba(255, 255, 255, 0.9); /* Strong white glow */
+    animation: glowPulse 2s infinite alternate; /* Pulsing animation */
+}
+
+/* Glowing effect for the highlighted numbers */
+#about-gallery-contact .highlight {
+    color: #ffeb3b; /* Yellow color */
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.8), /* Soft yellow glow */
+                 0 0 20px rgba(255, 235, 59, 1),   /* Medium yellow glow */
+                 0 0 30px rgba(255, 235, 59, 1.2); /* Strong yellow glow */
+}
+
+/* Animation for pulsing glow */
+@keyframes glowPulse {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                     0 0 10px rgba(255, 255, 255, 0.7),
+                     0 0 20px rgba(255, 255, 255, 0.9);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                     0 0 20px rgba(255, 255, 255, 0.9),
+                     0 0 30px rgba(255, 255, 255, 1.2);
+    }
+}
+/* Image Gallery Section */
+.gallery-section {
+    background-color: #add8e6; /* Light blue background */
+    padding: 50px 0;
+    border: 5px solid transparent; /* Initial border for space */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px 10px rgba(255, 235, 59, 0.7), /* Glowing yellow border */
+                0 0 40px 20px rgba(255, 235, 59, 0.5); /* Extended glow */
+}
+
+.gallery-title {
+    color: #000; /* Black text for contrast */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.33% - 40px); /* 6 images in 2 rows of 3 each, with some spacing */
+    max-width: calc(33.33% - 40px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+/* Glowing Section */
+.glowing-section {
+    background-color: #000; /* Black background */
+    padding: 50px 0;
+    border: 5px solid transparent; /* Initial border for space */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7), /* Glowing white border */
+                0 0 40px 20px rgba(255, 255, 255, 0.5); /* Extended glow */
+}
+
+.glowing-title {
+    color: #fff; /* White text */
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), /* Soft white glow */
+                 0 0 10px rgba(255, 255, 255, 0.7), /* Medium white glow */
+                 0 0 20px rgba(255, 255, 255, 0.9); /* Strong white glow */
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add space below */
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
