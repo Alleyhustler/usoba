@@ -1,9 +1,0 @@
-document.getElementById('purchase-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent actual form submission
-    
-    // Get the input value
-    const amount = document.getElementById('amount').value;
-    
-    // Simulate a purchase confirmation
-    document.getElementById('confirmation-message').innerText = `Purchase successful! You've spent ${amount} fake dollars.`;
-});
